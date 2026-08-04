@@ -1,0 +1,30 @@
+{
+    "buckets": [
+        {
+            "Name": "awesome-fonts",
+            "Source": "https://github.com/zetaloop/awesome-fonts"
+        }
+    ],
+    "apps": [
+        {
+            "Name": "font-maple-mono",
+            "Source": "awesome-fonts",
+            "Info": ""
+        },
+        {
+            "Name": "font-maple-mono-normal",
+            "Source": "awesome-fonts",
+            "Info": ""
+        },
+        {
+            "Name": "font-maple-mono-nf-cn",
+            "Source": "awesome-fonts",
+            "Info": ""
+        },
+        {
+            "Name": "font-maple-mono-normal-nf-cn",
+            "Source": "awesome-fonts",
+            "Info": ""
+        }
+    ]
+}

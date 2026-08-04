@@ -1,0 +1,31 @@
+{
+    "version": "1.5.6",
+    "description": "Monospaced font with cursive italics and programming ligatures",
+    "homepage": "https://github.com/rubjo/victor-mono",
+    "license": "OFL-1.1",
+    "url": [
+        "https://raw.githubusercontent.com/rubjo/victor-mono/v1.5.6/public/VictorMonoAll.zip",
+        "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1"
+    ],
+    "hash": [
+        "eab377ad3bcc7a202697c024ebb8c8728f99789c4f093d358f3d202052cc9496",
+        "ca61c8ebad92fe7fd6fb1a8a95a96ea54307a39d29bda162d5cf467077bc7878"
+    ],
+    "extract_dir": "TTF",
+    "installer": {
+        "file": "install-fonts.ps1",
+        "args": "install",
+        "keep": true
+    },
+    "uninstaller": {
+        "file": "install-fonts.ps1",
+        "args": "uninstall"
+    },
+    "checkver": "github",
+    "autoupdate": {
+        "url": [
+            "https://raw.githubusercontent.com/rubjo/victor-mono/v$version/public/VictorMonoAll.zip",
+            "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1"
+        ]
+    }
+}

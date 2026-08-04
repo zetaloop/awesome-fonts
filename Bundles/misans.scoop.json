@@ -1,0 +1,25 @@
+{
+    "buckets": [
+        {
+            "Name": "awesome-fonts",
+            "Source": "https://github.com/zetaloop/awesome-fonts"
+        }
+    ],
+    "apps": [
+        {
+            "Name": "font-misans",
+            "Source": "awesome-fonts",
+            "Info": ""
+        },
+        {
+            "Name": "font-misans-tc",
+            "Source": "awesome-fonts",
+            "Info": ""
+        },
+        {
+            "Name": "font-misans-l3",
+            "Source": "awesome-fonts",
+            "Info": ""
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "version": "1.522",
+    "description": "LXGW WenKai Lite Chinese handwriting font family",
+    "homepage": "https://github.com/lxgw/LxgwWenKai-Lite",
+    "license": "OFL-1.1",
+    "url": [
+        "https://github.com/lxgw/LxgwWenKai-Lite/releases/download/v1.522/lxgw-wenkai-lite-v1.522.zip",
+        "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1"
+    ],
+    "hash": [
+        "7c86ceeec54f2caa8b674b2a79bd82f4417815ab7c7330f80fede76ee4c9ea0b",
+        "ca61c8ebad92fe7fd6fb1a8a95a96ea54307a39d29bda162d5cf467077bc7878"
+    ],
+    "installer": {
+        "file": "install-fonts.ps1",
+        "args": "install",
+        "keep": true
+    },
+    "uninstaller": {
+        "file": "install-fonts.ps1",
+        "args": "uninstall"
+    },
+    "checkver": "github",
+    "autoupdate": {
+        "url": [
+            "https://github.com/lxgw/LxgwWenKai-Lite/releases/download/v$version/lxgw-wenkai-lite-v$version.zip",
+            "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1"
+        ]
+    }
+}

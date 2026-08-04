@@ -1,0 +1,33 @@
+{
+    "version": "90abd17b4f97671435798b6147b698aa9087612f",
+    "description": "Sans-serif font for headings and small text",
+    "homepage": "https://fonts.google.com/specimen/Varela",
+    "license": "OFL-1.1",
+    "url": [
+        "https://raw.githubusercontent.com/google/fonts/90abd17b4f97671435798b6147b698aa9087612f/ofl/varela/Varela-Regular.ttf",
+        "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1"
+    ],
+    "hash": [
+        "87cf0ddd50cd297cd6facfaac8bf59bf8d0b1a3b8b6619957ba08e72043d1896",
+        "ca61c8ebad92fe7fd6fb1a8a95a96ea54307a39d29bda162d5cf467077bc7878"
+    ],
+    "installer": {
+        "file": "install-fonts.ps1",
+        "args": "install",
+        "keep": true
+    },
+    "uninstaller": {
+        "file": "install-fonts.ps1",
+        "args": "uninstall"
+    },
+    "checkver": {
+        "url": "https://api.github.com/repos/google/fonts/commits?path=ofl%2Fvarela%2FVarela-Regular.ttf&per_page=1",
+        "jsonpath": "$[0].sha"
+    },
+    "autoupdate": {
+        "url": [
+            "https://raw.githubusercontent.com/google/fonts/$version/ofl/varela/Varela-Regular.ttf",
+            "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1"
+        ]
+    }
+}

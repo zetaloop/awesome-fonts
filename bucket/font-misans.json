@@ -1,0 +1,27 @@
+{
+    "version": "4.003",
+    "description": "MiSans variable font",
+    "homepage": "https://hyperos.mi.com/font/",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://hyperos.mi.com/font/"
+    },
+    "url": [
+        "https://hyperos.mi.com/font-download/MiSans.zip",
+        "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1"
+    ],
+    "hash": [
+        "b6aa1fc827035922612df8edf36e5609bca1c5441e25cd57572204569b7b81d9",
+        "ca61c8ebad92fe7fd6fb1a8a95a96ea54307a39d29bda162d5cf467077bc7878"
+    ],
+    "extract_dir": "MiSans/可变字体",
+    "installer": {
+        "file": "install-fonts.ps1",
+        "args": "install",
+        "keep": true
+    },
+    "uninstaller": {
+        "file": "install-fonts.ps1",
+        "args": "uninstall"
+    }
+}

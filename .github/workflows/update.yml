@@ -1,0 +1,57 @@
+name: Update
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '20 3 * * *'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  scoop:
+    name: Scoop
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Update manifests
+        uses: ScoopInstaller/GithubActions@a709983c0692a8a853c288cf5e9bf14658107936 # main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SKIP_UPDATED: 1
+
+  homebrew:
+    name: Homebrew
+    runs-on: macos-26
+    steps:
+      - name: Checkout tap
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Set up Homebrew
+        id: homebrew
+        uses: Homebrew/actions/setup-homebrew@1f8e202ffddf94def7f42f6fa3a482e821489f9c # 2026.07.10.1
+        with:
+          stable: false
+      - name: Cache Homebrew Ruby gems
+        id: cache
+        uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: ${{ steps.homebrew.outputs.gems-path }}
+          key: ${{ runner.os }}-rubygems-${{ steps.homebrew.outputs.gems-hash }}
+          restore-keys: ${{ runner.os }}-rubygems-
+      - name: Install Homebrew Ruby gems
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: brew install-bundler-gems
+      - name: Register tap
+        run: |
+          tap_dir="$(brew --repository)/Library/Taps/zetaloop/homebrew-awesome-fonts"
+          mkdir -p "$(dirname "$tap_dir")"
+          git clone "$GITHUB_WORKSPACE" "$tap_dir"
+          git -C "$tap_dir" remote set-url origin "https://github.com/$GITHUB_REPOSITORY.git"
+          echo "TAP_DIR=$tap_dir" >> "$GITHUB_ENV"
+      - name: Update casks
+        run: cd "$TAP_DIR" && brew bump --no-fork --open-pr --casks --tap=zetaloop/awesome-fonts
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,27 @@
+{
+    "version": "3.0",
+    "description": "Alibaba PuHuiTi Chinese sans-serif font family",
+    "homepage": "https://www.alibabafonts.com/",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://www.alibabafonts.com/"
+    },
+    "url": [
+        "https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3.zip",
+        "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1"
+    ],
+    "hash": [
+        "f25f730b6a7661bcd5b9764dc98f05d3ac25ee771977cf04b31ed5fba9f496a7",
+        "ca61c8ebad92fe7fd6fb1a8a95a96ea54307a39d29bda162d5cf467077bc7878"
+    ],
+    "extract_dir": "AlibabaPuHuiTi-3",
+    "installer": {
+        "file": "install-fonts.ps1",
+        "args": "install",
+        "keep": true
+    },
+    "uninstaller": {
+        "file": "install-fonts.ps1",
+        "args": "uninstall"
+    }
+}

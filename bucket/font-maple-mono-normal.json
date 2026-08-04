@@ -1,0 +1,32 @@
+{
+    "version": "7.9",
+    "description": "Conventional-glyph rounded monospace font with ligatures",
+    "homepage": "https://font.subf.dev/",
+    "license": "OFL-1.1",
+    "url": [
+        "https://github.com/subframe7536/maple-font/releases/download/v7.9/MapleMonoNormal-TTF.zip",
+        "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1"
+    ],
+    "hash": [
+        "394bb22b577e2fe3d098778d4b17bbee5cbb73cdf715363250bb847bd71b877f",
+        "ca61c8ebad92fe7fd6fb1a8a95a96ea54307a39d29bda162d5cf467077bc7878"
+    ],
+    "installer": {
+        "file": "install-fonts.ps1",
+        "args": "install",
+        "keep": true
+    },
+    "uninstaller": {
+        "file": "install-fonts.ps1",
+        "args": "uninstall"
+    },
+    "checkver": {
+        "github": "https://github.com/subframe7536/maple-font"
+    },
+    "autoupdate": {
+        "url": [
+            "https://github.com/subframe7536/maple-font/releases/download/v$version/MapleMonoNormal-TTF.zip",
+            "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1"
+        ]
+    }
+}

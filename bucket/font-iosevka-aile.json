@@ -1,0 +1,32 @@
+{
+    "version": "34.8.0",
+    "description": "Sans-serif quasi-proportional companion to Iosevka",
+    "homepage": "https://typeof.net/Iosevka/",
+    "license": "OFL-1.1",
+    "url": [
+        "https://github.com/be5invis/Iosevka/releases/download/v34.8.0/PkgTTC-IosevkaAile-34.8.0.zip",
+        "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1"
+    ],
+    "hash": [
+        "fd66c3f976005c6c633708676d9e678550d84a4a4402f510e5c3ed6c9e50f119",
+        "ca61c8ebad92fe7fd6fb1a8a95a96ea54307a39d29bda162d5cf467077bc7878"
+    ],
+    "installer": {
+        "file": "install-fonts.ps1",
+        "args": "install",
+        "keep": true
+    },
+    "uninstaller": {
+        "file": "install-fonts.ps1",
+        "args": "uninstall"
+    },
+    "checkver": {
+        "github": "https://github.com/be5invis/Iosevka"
+    },
+    "autoupdate": {
+        "url": [
+            "https://github.com/be5invis/Iosevka/releases/download/v$version/PkgTTC-IosevkaAile-$version.zip",
+            "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1"
+        ]
+    }
+}

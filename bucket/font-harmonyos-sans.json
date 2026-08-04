@@ -1,0 +1,27 @@
+{
+    "version": "2025.04.08",
+    "description": "HarmonyOS Sans Latin font family",
+    "homepage": "https://developer.huawei.com/consumer/cn/design/resource/",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://developer.huawei.com/consumer/cn/design/resource/"
+    },
+    "url": [
+        "https://developer.huawei.com/images/download/next/HarmonyOS-Sans.zip",
+        "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1"
+    ],
+    "hash": [
+        "ba7ddf71fc4dee33a7170869564ad76d421a2ed5c58e5aac9a573c39945ef654",
+        "ca61c8ebad92fe7fd6fb1a8a95a96ea54307a39d29bda162d5cf467077bc7878"
+    ],
+    "extract_dir": "HarmonyOS Sans/HarmonyOS_Sans",
+    "installer": {
+        "file": "install-fonts.ps1",
+        "args": "install",
+        "keep": true
+    },
+    "uninstaller": {
+        "file": "install-fonts.ps1",
+        "args": "uninstall"
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "version": "1.304",
+    "description": "Extended LXGW Neo XiHei Chinese sans-serif font",
+    "homepage": "https://github.com/lxgw/LxgwNeoXiHei",
+    "license": "IPA",
+    "url": [
+        "https://github.com/lxgw/LxgwNeoXiHei/releases/download/v1.304/LXGWNeoXiHeiPlus.ttf",
+        "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1"
+    ],
+    "hash": [
+        "bd88d67c8c70d95cb12148fb7b7d6a1239562324ec87436a3806ea041f54ab82",
+        "ca61c8ebad92fe7fd6fb1a8a95a96ea54307a39d29bda162d5cf467077bc7878"
+    ],
+    "installer": {
+        "file": "install-fonts.ps1",
+        "args": "install",
+        "keep": true
+    },
+    "uninstaller": {
+        "file": "install-fonts.ps1",
+        "args": "uninstall"
+    },
+    "checkver": "github",
+    "autoupdate": {
+        "url": [
+            "https://github.com/lxgw/LxgwNeoXiHei/releases/download/v$version/LXGWNeoXiHeiPlus.ttf",
+            "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1"
+        ]
+    }
+}

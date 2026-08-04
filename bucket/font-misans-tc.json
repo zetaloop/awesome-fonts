@@ -1,0 +1,27 @@
+{
+    "version": "1.002",
+    "description": "MiSans Traditional Chinese variable font",
+    "homepage": "https://hyperos.mi.com/font/",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://hyperos.mi.com/font/"
+    },
+    "url": [
+        "https://hyperos.mi.com/font-download/MiSans_TC.zip",
+        "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1"
+    ],
+    "hash": [
+        "417831f033601f1738fefb2ce9158586d0143385a9dd0c4cfa985bcc16c7443b",
+        "ca61c8ebad92fe7fd6fb1a8a95a96ea54307a39d29bda162d5cf467077bc7878"
+    ],
+    "extract_dir": "MiSans TC/可变字体",
+    "installer": {
+        "file": "install-fonts.ps1",
+        "args": "install",
+        "keep": true
+    },
+    "uninstaller": {
+        "file": "install-fonts.ps1",
+        "args": "uninstall"
+    }
+}

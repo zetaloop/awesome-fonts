@@ -1,0 +1,40 @@
+{
+    "buckets": [
+        {
+            "Name": "awesome-fonts",
+            "Source": "https://github.com/zetaloop/awesome-fonts"
+        }
+    ],
+    "apps": [
+        {
+            "Name": "font-iosevka-aile",
+            "Source": "awesome-fonts",
+            "Info": ""
+        },
+        {
+            "Name": "font-iosevka-etoile",
+            "Source": "awesome-fonts",
+            "Info": ""
+        },
+        {
+            "Name": "font-iosevka-sgr",
+            "Source": "awesome-fonts",
+            "Info": ""
+        },
+        {
+            "Name": "font-iosevka-sgr-slab",
+            "Source": "awesome-fonts",
+            "Info": ""
+        },
+        {
+            "Name": "font-iosevka-sgr-term",
+            "Source": "awesome-fonts",
+            "Info": ""
+        },
+        {
+            "Name": "font-iosevka-sgr-term-slab",
+            "Source": "awesome-fonts",
+            "Info": ""
+        }
+    ]
+}

@@ -1,0 +1,38 @@
+{
+    "version": "1.066",
+    "description": "LXGW Neo ZhiSong Chinese serif font with local metrics variant",
+    "homepage": "https://github.com/lxgw/LxgwNeoZhiSong",
+    "license": "IPA",
+    "depends": "main/uv",
+    "url": [
+        "https://github.com/lxgw/LxgwNeoZhiSong/releases/download/v1.066/LXGWNeoZhiSong.ttf",
+        "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/transform-neozhisong.py",
+        "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1"
+    ],
+    "hash": [
+        "95936a086ff7ad8e8b30288dec0e20e817976fa1275d8f11a85b1e6144c8d017",
+        "29b769dc1ae66357c306f67e24d3f5fbc9f485f621aa21e0843fa66c823a7461",
+        "ca61c8ebad92fe7fd6fb1a8a95a96ea54307a39d29bda162d5cf467077bc7878"
+    ],
+    "pre_install": [
+        "uv run \"$dir\\transform-neozhisong.py\" \"$dir\\LXGWNeoZhiSong.ttf\"",
+        "if ($LASTEXITCODE -ne 0) { throw 'NeoZhiSong font transformation failed' }"
+    ],
+    "installer": {
+        "file": "install-fonts.ps1",
+        "args": "install",
+        "keep": true
+    },
+    "uninstaller": {
+        "file": "install-fonts.ps1",
+        "args": "uninstall"
+    },
+    "checkver": "github",
+    "autoupdate": {
+        "url": [
+            "https://github.com/lxgw/LxgwNeoZhiSong/releases/download/v$version/LXGWNeoZhiSong.ttf",
+            "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/transform-neozhisong.py",
+            "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1"
+        ]
+    }
+}

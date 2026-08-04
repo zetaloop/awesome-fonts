@@ -1,0 +1,32 @@
+{
+    "version": "34.8.0",
+    "description": "Slab-serif quasi-proportional companion to Iosevka",
+    "homepage": "https://typeof.net/Iosevka/",
+    "license": "OFL-1.1",
+    "url": [
+        "https://github.com/be5invis/Iosevka/releases/download/v34.8.0/PkgTTC-IosevkaEtoile-34.8.0.zip",
+        "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1"
+    ],
+    "hash": [
+        "b48a444d7c8fe9a58d8c938b005ece1e32bd4fbe242a28c5de192b6d8225e09b",
+        "ca61c8ebad92fe7fd6fb1a8a95a96ea54307a39d29bda162d5cf467077bc7878"
+    ],
+    "installer": {
+        "file": "install-fonts.ps1",
+        "args": "install",
+        "keep": true
+    },
+    "uninstaller": {
+        "file": "install-fonts.ps1",
+        "args": "uninstall"
+    },
+    "checkver": {
+        "github": "https://github.com/be5invis/Iosevka"
+    },
+    "autoupdate": {
+        "url": [
+            "https://github.com/be5invis/Iosevka/releases/download/v$version/PkgTTC-IosevkaEtoile-$version.zip",
+            "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1"
+        ]
+    }
+}

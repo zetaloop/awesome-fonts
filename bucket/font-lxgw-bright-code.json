@@ -1,0 +1,30 @@
+{
+    "version": "2.922",
+    "description": "Monospace programming variant of LXGW Bright",
+    "homepage": "https://github.com/lxgw/LxgwBright-Code",
+    "license": "OFL-1.1",
+    "url": [
+        "https://github.com/lxgw/LxgwBright-Code/releases/download/v2.922/LxgwBrightCode.7z",
+        "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1"
+    ],
+    "hash": [
+        "bfefc5f32132bf284a039011deabea40ba350eaab0d8629e1aa160232897d3dd",
+        "ca61c8ebad92fe7fd6fb1a8a95a96ea54307a39d29bda162d5cf467077bc7878"
+    ],
+    "installer": {
+        "file": "install-fonts.ps1",
+        "args": "install",
+        "keep": true
+    },
+    "uninstaller": {
+        "file": "install-fonts.ps1",
+        "args": "uninstall"
+    },
+    "checkver": "github",
+    "autoupdate": {
+        "url": [
+            "https://github.com/lxgw/LxgwBright-Code/releases/download/v$version/LxgwBrightCode.7z",
+            "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1"
+        ]
+    }
+}

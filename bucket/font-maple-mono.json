@@ -1,0 +1,32 @@
+{
+    "version": "7.9",
+    "description": "Rounded monospace font with ligatures",
+    "homepage": "https://font.subf.dev/",
+    "license": "OFL-1.1",
+    "url": [
+        "https://github.com/subframe7536/maple-font/releases/download/v7.9/MapleMono-TTF.zip",
+        "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1"
+    ],
+    "hash": [
+        "3a35f8f0669bef3dded9df208cc4526a6f7573210e134816e9084a8981271d75",
+        "ca61c8ebad92fe7fd6fb1a8a95a96ea54307a39d29bda162d5cf467077bc7878"
+    ],
+    "installer": {
+        "file": "install-fonts.ps1",
+        "args": "install",
+        "keep": true
+    },
+    "uninstaller": {
+        "file": "install-fonts.ps1",
+        "args": "uninstall"
+    },
+    "checkver": {
+        "github": "https://github.com/subframe7536/maple-font"
+    },
+    "autoupdate": {
+        "url": [
+            "https://github.com/subframe7536/maple-font/releases/download/v$version/MapleMono-TTF.zip",
+            "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1"
+        ]
+    }
+}

@@ -1,2 +1,7 @@
-# Auto detect text files and perform LF normalization
 * text=auto
+*.ps1 text eol=crlf
+*.py text eol=lf
+*.rb text eol=lf
+*.yml text eol=lf
+*.json text eol=lf
+bucket/*.json text eol=crlf
