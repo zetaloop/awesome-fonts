@@ -44,6 +44,8 @@ jobs:
       - name: Analyze PowerShell
         run: Invoke-ScriptAnalyzer -Path .\bucket -Recurse -EnableExit
       - name: Test bucket
+        env:
+          CI: "false"
         run: |
           $env:SCOOP_HOME = Convert-Path .\scoop
           .\bucket\bin\test.ps1
