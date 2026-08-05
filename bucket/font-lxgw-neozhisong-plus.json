@@ -12,7 +12,7 @@
     "hash": [
         "279c973effc2811a827713ffa12706d556cab10b5067c0728400bf9e464f7008",
         "29b769dc1ae66357c306f67e24d3f5fbc9f485f621aa21e0843fa66c823a7461",
-        "f1085dff30da91cbb6ca7bf23691063f4c80f22890f0c2ed37567b8328703480"
+        "7f0afd42bf52bcd6ccdfd1ce1a8741ea29cfb407058d7b99c78bbc221eb305ed"
     ],
     "pre_install": [
         "uv run \"$dir\\transform-neozhisong.py\" \"$dir\\LXGWNeoZhiSongPlus.ttf\"",

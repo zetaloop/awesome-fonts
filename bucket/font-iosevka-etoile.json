@@ -9,7 +9,7 @@
     ],
     "hash": [
         "b48a444d7c8fe9a58d8c938b005ece1e32bd4fbe242a28c5de192b6d8225e09b",
-        "f1085dff30da91cbb6ca7bf23691063f4c80f22890f0c2ed37567b8328703480"
+        "7f0afd42bf52bcd6ccdfd1ce1a8741ea29cfb407058d7b99c78bbc221eb305ed"
     ],
     "installer": {
         "script": "& \"$dir\\install-fonts.ps1\" install"
