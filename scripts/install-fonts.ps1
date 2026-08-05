@@ -8,7 +8,7 @@ $ErrorActionPreference = 'Stop'
 $fontInstallDir = if ($global) { "$env:windir\Fonts" } else { "$env:LOCALAPPDATA\Microsoft\Windows\Fonts" }
 $registryRoot = if ($global) { 'HKLM' } else { 'HKCU' }
 $registryKey = "${registryRoot}:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts"
-$fonts = @(Get-ChildItem $PSScriptRoot -Recurse -File | Where-Object { $_.Extension -in '.ttf', '.ttc' -and !$_.Name.StartsWith('._') })
+$fonts = @(Get-ChildItem -LiteralPath $PSScriptRoot -Recurse -File | Where-Object { $_.Extension -in '.ttf', '.ttc' -and !$_.Name.StartsWith('._') })
 $nativeMethods = 'AwesomeFonts.NativeMethods' -as [type]
 if (!$nativeMethods) {
     $nativeMethods = Add-Type -MemberDefinition @'
@@ -53,10 +53,10 @@ if ($Action -eq 'install') {
     foreach ($font in $fonts) {
         $destination = Join-Path $fontInstallDir $font.Name
         $value = if ($global) { $font.Name } else { $destination }
-        $sameFile = (Test-Path $destination) -and (Get-FileHash $font.FullName).Hash -eq (Get-FileHash $destination).Hash
+        $sameFile = (Test-Path -LiteralPath $destination) -and (Get-FileHash -LiteralPath $font.FullName).Hash -eq (Get-FileHash -LiteralPath $destination).Hash
 
         while ($nativeMethods::RemoveFontResourceEx($destination, 0, [IntPtr]::Zero)) {}
-        if (!$sameFile) { Copy-Item $font.FullName $destination -Force }
+        if (!$sameFile) { Copy-Item -LiteralPath $font.FullName -Destination $destination -Force }
         if ($nativeMethods::AddFontResourceEx($destination, 0, [IntPtr]::Zero) -eq 0) {
             throw "Unable to load font '$destination'"
         }
@@ -65,7 +65,7 @@ if ($Action -eq 'install') {
 } else {
     foreach ($font in $fonts) {
         $destination = Join-Path $fontInstallDir $font.Name
-        if (Test-Path $destination) {
+        if (Test-Path -LiteralPath $destination) {
             while ($nativeMethods::RemoveFontResourceEx($destination, 0, [IntPtr]::Zero)) {}
             $stream = [System.IO.File]::Open($destination, 'Open', 'ReadWrite', 'None')
             $stream.Dispose()
@@ -74,8 +74,8 @@ if ($Action -eq 'install') {
 
     foreach ($font in $fonts) {
         $destination = Join-Path $fontInstallDir $font.Name
-        if (Test-Path $destination) { Remove-Item $destination -Force }
-        $name = "$($font.BaseName) (TrueType)"
+        if (Test-Path -LiteralPath $destination) { Remove-Item -LiteralPath $destination -Force }
+        $name = [WildcardPattern]::Escape("$($font.BaseName) (TrueType)")
         if ($null -ne (Get-ItemPropertyValue $registryKey $name -ErrorAction SilentlyContinue)) {
             Remove-ItemProperty $registryKey $name -Force
         }
