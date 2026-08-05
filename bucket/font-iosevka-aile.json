@@ -3,8 +3,8 @@
     "description": "Sans-serif quasi-proportional companion to Iosevka",
     "homepage": "https://typeof.net/Iosevka/",
     "license": "OFL-1.1",
-    "url": "https://github.com/be5invis/Iosevka/releases/download/v34.8.0/PkgTTC-IosevkaAile-34.8.0.zip",
-    "hash": "fd66c3f976005c6c633708676d9e678550d84a4a4402f510e5c3ed6c9e50f119",
+    "url": "https://github.com/be5invis/Iosevka/releases/download/v34.8.0/SuperTTC-IosevkaAile-34.8.0.zip",
+    "hash": "5993bc2675eda5062e962a7d336b6637ec25b1cbf61de287e6f08025b41ba9ad",
     "installer": {
         "script": [
             "Copy-Item (Join-Path (Find-BucketDirectory $bucket -Root) \"scripts\\install-fonts.ps1\") $dir -ErrorAction Stop",
@@ -18,6 +18,6 @@
         "github": "https://github.com/be5invis/Iosevka"
     },
     "autoupdate": {
-        "url": "https://github.com/be5invis/Iosevka/releases/download/v$version/PkgTTC-IosevkaAile-$version.zip"
+        "url": "https://github.com/be5invis/Iosevka/releases/download/v$version/SuperTTC-IosevkaAile-$version.zip"
     }
 }

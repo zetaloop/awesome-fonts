@@ -1,8 +1,8 @@
 cask "font-iosevka-sgr" do
   version "34.8.0"
-  sha256 "1d1b7446f391e1e28ed8c7daab3cd970c116e53661273c66a1b3bd3d2dbafb3d"
+  sha256 "f9278d3cc47ec4cb30b25d84e197fd5a702d7d37805548acebbb95e79063fe09"
 
-  url "https://github.com/be5invis/Iosevka/releases/download/v#{version}/PkgTTC-SGr-Iosevka-#{version}.zip"
+  url "https://github.com/be5invis/Iosevka/releases/download/v#{version}/SuperTTC-SGr-Iosevka-#{version}.zip"
   name "SGr Iosevka"
   desc "Curly-braced monospace variant of Iosevka"
   homepage "https://github.com/be5invis/Iosevka/"
@@ -12,13 +12,5 @@ cask "font-iosevka-sgr" do
     strategy :github_latest
   end
 
-  font "SGr-Iosevka-Bold.ttc"
-  font "SGr-Iosevka-ExtraBold.ttc"
-  font "SGr-Iosevka-ExtraLight.ttc"
-  font "SGr-Iosevka-Heavy.ttc"
-  font "SGr-Iosevka-Light.ttc"
-  font "SGr-Iosevka-Medium.ttc"
-  font "SGr-Iosevka-Regular.ttc"
-  font "SGr-Iosevka-SemiBold.ttc"
-  font "SGr-Iosevka-Thin.ttc"
+  font "SGr-Iosevka.ttc"
 end

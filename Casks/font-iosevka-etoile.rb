@@ -1,8 +1,8 @@
 cask "font-iosevka-etoile" do
   version "34.8.0"
-  sha256 "b48a444d7c8fe9a58d8c938b005ece1e32bd4fbe242a28c5de192b6d8225e09b"
+  sha256 "b4c7040112b239a1f8365461232cff67f5c2c4823c48e2526d04edce8f2161cd"
 
-  url "https://github.com/be5invis/Iosevka/releases/download/v#{version}/PkgTTC-IosevkaEtoile-#{version}.zip"
+  url "https://github.com/be5invis/Iosevka/releases/download/v#{version}/SuperTTC-IosevkaEtoile-#{version}.zip"
   name "Iosevka Etoile"
   desc "Slab-serif quasi-proportional companion to Iosevka"
   homepage "https://github.com/be5invis/Iosevka/"
@@ -12,13 +12,5 @@ cask "font-iosevka-etoile" do
     strategy :github_latest
   end
 
-  font "IosevkaEtoile-Bold.ttc"
-  font "IosevkaEtoile-ExtraBold.ttc"
-  font "IosevkaEtoile-ExtraLight.ttc"
-  font "IosevkaEtoile-Heavy.ttc"
-  font "IosevkaEtoile-Light.ttc"
-  font "IosevkaEtoile-Medium.ttc"
-  font "IosevkaEtoile-Regular.ttc"
-  font "IosevkaEtoile-SemiBold.ttc"
-  font "IosevkaEtoile-Thin.ttc"
+  font "IosevkaEtoile.ttc"
 end

@@ -1,8 +1,8 @@
 cask "font-iosevka-sgr-term" do
   version "34.8.0"
-  sha256 "db758d6f289bc66ff3f1229df0907bb7e1f6b1f79327a1767daab6a8c81f9c65"
+  sha256 "523adf9752e130961d0cdbb6e80d22d1d0cfdd575b34f55282df02a69ef5903f"
 
-  url "https://github.com/be5invis/Iosevka/releases/download/v#{version}/PkgTTC-SGr-IosevkaTerm-#{version}.zip"
+  url "https://github.com/be5invis/Iosevka/releases/download/v#{version}/SuperTTC-SGr-IosevkaTerm-#{version}.zip"
   name "SGr Iosevka Term"
   desc "Terminal monospace variant of Iosevka"
   homepage "https://github.com/be5invis/Iosevka/"
@@ -12,13 +12,5 @@ cask "font-iosevka-sgr-term" do
     strategy :github_latest
   end
 
-  font "SGr-IosevkaTerm-Bold.ttc"
-  font "SGr-IosevkaTerm-ExtraBold.ttc"
-  font "SGr-IosevkaTerm-ExtraLight.ttc"
-  font "SGr-IosevkaTerm-Heavy.ttc"
-  font "SGr-IosevkaTerm-Light.ttc"
-  font "SGr-IosevkaTerm-Medium.ttc"
-  font "SGr-IosevkaTerm-Regular.ttc"
-  font "SGr-IosevkaTerm-SemiBold.ttc"
-  font "SGr-IosevkaTerm-Thin.ttc"
+  font "SGr-IosevkaTerm.ttc"
 end

@@ -3,8 +3,8 @@
     "description": "Slab-serif quasi-proportional companion to Iosevka",
     "homepage": "https://typeof.net/Iosevka/",
     "license": "OFL-1.1",
-    "url": "https://github.com/be5invis/Iosevka/releases/download/v34.8.0/PkgTTC-IosevkaEtoile-34.8.0.zip",
-    "hash": "b48a444d7c8fe9a58d8c938b005ece1e32bd4fbe242a28c5de192b6d8225e09b",
+    "url": "https://github.com/be5invis/Iosevka/releases/download/v34.8.0/SuperTTC-IosevkaEtoile-34.8.0.zip",
+    "hash": "b4c7040112b239a1f8365461232cff67f5c2c4823c48e2526d04edce8f2161cd",
     "installer": {
         "script": [
             "Copy-Item (Join-Path (Find-BucketDirectory $bucket -Root) \"scripts\\install-fonts.ps1\") $dir -ErrorAction Stop",
@@ -18,6 +18,6 @@
         "github": "https://github.com/be5invis/Iosevka"
     },
     "autoupdate": {
-        "url": "https://github.com/be5invis/Iosevka/releases/download/v$version/PkgTTC-IosevkaEtoile-$version.zip"
+        "url": "https://github.com/be5invis/Iosevka/releases/download/v$version/SuperTTC-IosevkaEtoile-$version.zip"
     }
 }

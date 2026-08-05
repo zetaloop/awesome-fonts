@@ -1,8 +1,8 @@
 cask "font-maple-mono" do
   version "7.9"
-  sha256 "3a35f8f0669bef3dded9df208cc4526a6f7573210e134816e9084a8981271d75"
+  sha256 "b9e57677cc4ec069ce178bd965d66cd14bd26c12e37d89d786ff959339bf8c93"
 
-  url "https://github.com/subframe7536/maple-font/releases/download/v#{version}/MapleMono-TTF.zip",
+  url "https://github.com/subframe7536/maple-font/releases/download/v#{version}/MapleMono-Variable.zip",
       verified: "github.com/subframe7536/maple-font/"
   name "Maple Mono"
   desc "Rounded monospace font with ligatures"
@@ -13,20 +13,6 @@ cask "font-maple-mono" do
     strategy :github_latest
   end
 
-  font "MapleMono-Bold.ttf"
-  font "MapleMono-BoldItalic.ttf"
-  font "MapleMono-ExtraBold.ttf"
-  font "MapleMono-ExtraBoldItalic.ttf"
-  font "MapleMono-ExtraLight.ttf"
-  font "MapleMono-ExtraLightItalic.ttf"
-  font "MapleMono-Italic.ttf"
-  font "MapleMono-Light.ttf"
-  font "MapleMono-LightItalic.ttf"
-  font "MapleMono-Medium.ttf"
-  font "MapleMono-MediumItalic.ttf"
-  font "MapleMono-Regular.ttf"
-  font "MapleMono-SemiBold.ttf"
-  font "MapleMono-SemiBoldItalic.ttf"
-  font "MapleMono-Thin.ttf"
-  font "MapleMono-ThinItalic.ttf"
+  font "MapleMono-Italic[wght].ttf"
+  font "MapleMono[wght].ttf"
 end

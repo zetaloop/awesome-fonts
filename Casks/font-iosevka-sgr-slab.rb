@@ -1,8 +1,8 @@
 cask "font-iosevka-sgr-slab" do
   version "34.8.0"
-  sha256 "d1bb805bb72ec87f128e209310eaaaad8bf9d732a2349da87a4b06992fadfd5e"
+  sha256 "ba91053fd83e882de92dc5af1c90c0e2b3aed5cc3b3fb83f5c0e5b0e951c9376"
 
-  url "https://github.com/be5invis/Iosevka/releases/download/v#{version}/PkgTTC-SGr-IosevkaSlab-#{version}.zip"
+  url "https://github.com/be5invis/Iosevka/releases/download/v#{version}/SuperTTC-SGr-IosevkaSlab-#{version}.zip"
   name "SGr Iosevka Slab"
   desc "Slab-serif monospace variant of Iosevka"
   homepage "https://github.com/be5invis/Iosevka/"
@@ -12,13 +12,5 @@ cask "font-iosevka-sgr-slab" do
     strategy :github_latest
   end
 
-  font "SGr-IosevkaSlab-Bold.ttc"
-  font "SGr-IosevkaSlab-ExtraBold.ttc"
-  font "SGr-IosevkaSlab-ExtraLight.ttc"
-  font "SGr-IosevkaSlab-Heavy.ttc"
-  font "SGr-IosevkaSlab-Light.ttc"
-  font "SGr-IosevkaSlab-Medium.ttc"
-  font "SGr-IosevkaSlab-Regular.ttc"
-  font "SGr-IosevkaSlab-SemiBold.ttc"
-  font "SGr-IosevkaSlab-Thin.ttc"
+  font "SGr-IosevkaSlab.ttc"
 end
