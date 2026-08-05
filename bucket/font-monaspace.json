@@ -12,13 +12,10 @@
         "ca61c8ebad92fe7fd6fb1a8a95a96ea54307a39d29bda162d5cf467077bc7878"
     ],
     "installer": {
-        "file": "install-fonts.ps1",
-        "args": "install",
-        "keep": true
+        "script": "& \"$dir\\install-fonts.ps1\" install"
     },
     "uninstaller": {
-        "file": "install-fonts.ps1",
-        "args": "uninstall"
+        "script": "& \"$dir\\install-fonts.ps1\" uninstall"
     },
     "checkver": {
         "github": "https://github.com/githubnext/monaspace"

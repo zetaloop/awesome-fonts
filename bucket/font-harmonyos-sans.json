@@ -16,12 +16,9 @@
     ],
     "extract_dir": "HarmonyOS Sans/HarmonyOS_Sans",
     "installer": {
-        "file": "install-fonts.ps1",
-        "args": "install",
-        "keep": true
+        "script": "& \"$dir\\install-fonts.ps1\" install"
     },
     "uninstaller": {
-        "file": "install-fonts.ps1",
-        "args": "uninstall"
+        "script": "& \"$dir\\install-fonts.ps1\" uninstall"
     }
 }
