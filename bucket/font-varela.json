@@ -3,16 +3,13 @@
     "description": "Sans-serif font for headings and small text",
     "homepage": "https://fonts.google.com/specimen/Varela",
     "license": "OFL-1.1",
-    "url": [
-        "https://raw.githubusercontent.com/google/fonts/90abd17b4f97671435798b6147b698aa9087612f/ofl/varela/Varela-Regular.ttf",
-        "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1"
-    ],
-    "hash": [
-        "87cf0ddd50cd297cd6facfaac8bf59bf8d0b1a3b8b6619957ba08e72043d1896",
-        "7f0afd42bf52bcd6ccdfd1ce1a8741ea29cfb407058d7b99c78bbc221eb305ed"
-    ],
+    "url": "https://raw.githubusercontent.com/google/fonts/90abd17b4f97671435798b6147b698aa9087612f/ofl/varela/Varela-Regular.ttf",
+    "hash": "87cf0ddd50cd297cd6facfaac8bf59bf8d0b1a3b8b6619957ba08e72043d1896",
     "installer": {
-        "script": "& \"$dir\\install-fonts.ps1\" install"
+        "script": [
+            "Copy-Item (Join-Path (Find-BucketDirectory $bucket -Root) \"scripts\\install-fonts.ps1\") $dir -ErrorAction Stop",
+            "& \"$dir\\install-fonts.ps1\" install"
+        ]
     },
     "uninstaller": {
         "script": "& \"$dir\\install-fonts.ps1\" uninstall"
@@ -22,9 +19,6 @@
         "jsonpath": "$[0].sha"
     },
     "autoupdate": {
-        "url": [
-            "https://raw.githubusercontent.com/google/fonts/$version/ofl/varela/Varela-Regular.ttf",
-            "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1"
-        ]
+        "url": "https://raw.githubusercontent.com/google/fonts/$version/ofl/varela/Varela-Regular.ttf"
     }
 }

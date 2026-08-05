@@ -3,25 +3,19 @@
     "description": "LXGW Neo XiHei Chinese sans-serif font",
     "homepage": "https://github.com/lxgw/LxgwNeoXiHei",
     "license": "IPA",
-    "url": [
-        "https://github.com/lxgw/LxgwNeoXiHei/releases/download/v1.304/LXGWNeoXiHei.ttf",
-        "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1"
-    ],
-    "hash": [
-        "5965dd992290861c6d62285098dc5ca7f6c669930765fd11d5d0fd4912d816e7",
-        "7f0afd42bf52bcd6ccdfd1ce1a8741ea29cfb407058d7b99c78bbc221eb305ed"
-    ],
+    "url": "https://github.com/lxgw/LxgwNeoXiHei/releases/download/v1.304/LXGWNeoXiHei.ttf",
+    "hash": "5965dd992290861c6d62285098dc5ca7f6c669930765fd11d5d0fd4912d816e7",
     "installer": {
-        "script": "& \"$dir\\install-fonts.ps1\" install"
+        "script": [
+            "Copy-Item (Join-Path (Find-BucketDirectory $bucket -Root) \"scripts\\install-fonts.ps1\") $dir -ErrorAction Stop",
+            "& \"$dir\\install-fonts.ps1\" install"
+        ]
     },
     "uninstaller": {
         "script": "& \"$dir\\install-fonts.ps1\" uninstall"
     },
     "checkver": "github",
     "autoupdate": {
-        "url": [
-            "https://github.com/lxgw/LxgwNeoXiHei/releases/download/v$version/LXGWNeoXiHei.ttf",
-            "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1"
-        ]
+        "url": "https://github.com/lxgw/LxgwNeoXiHei/releases/download/v$version/LXGWNeoXiHei.ttf"
     }
 }

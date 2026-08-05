@@ -3,16 +3,13 @@
     "description": "Rounded sans-serif font",
     "homepage": "https://fonts.google.com/specimen/Varela+Round",
     "license": "OFL-1.1",
-    "url": [
-        "https://raw.githubusercontent.com/google/fonts/1866b1b967b78211927c48c9835099c33fb85b3b/ofl/varelaround/VarelaRound-Regular.ttf",
-        "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1"
-    ],
-    "hash": [
-        "e1e47eb66dbc2ddc106661338e712d9176c9e83c669a82fde155324823d03aa2",
-        "7f0afd42bf52bcd6ccdfd1ce1a8741ea29cfb407058d7b99c78bbc221eb305ed"
-    ],
+    "url": "https://raw.githubusercontent.com/google/fonts/1866b1b967b78211927c48c9835099c33fb85b3b/ofl/varelaround/VarelaRound-Regular.ttf",
+    "hash": "e1e47eb66dbc2ddc106661338e712d9176c9e83c669a82fde155324823d03aa2",
     "installer": {
-        "script": "& \"$dir\\install-fonts.ps1\" install"
+        "script": [
+            "Copy-Item (Join-Path (Find-BucketDirectory $bucket -Root) \"scripts\\install-fonts.ps1\") $dir -ErrorAction Stop",
+            "& \"$dir\\install-fonts.ps1\" install"
+        ]
     },
     "uninstaller": {
         "script": "& \"$dir\\install-fonts.ps1\" uninstall"
@@ -22,9 +19,6 @@
         "jsonpath": "$[0].sha"
     },
     "autoupdate": {
-        "url": [
-            "https://raw.githubusercontent.com/google/fonts/$version/ofl/varelaround/VarelaRound-Regular.ttf",
-            "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1"
-        ]
+        "url": "https://raw.githubusercontent.com/google/fonts/$version/ofl/varelaround/VarelaRound-Regular.ttf"
     }
 }

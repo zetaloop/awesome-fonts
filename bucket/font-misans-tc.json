@@ -6,17 +6,14 @@
         "identifier": "Freeware",
         "url": "https://hyperos.mi.com/font/"
     },
-    "url": [
-        "https://hyperos.mi.com/font-download/MiSans_TC.zip",
-        "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1"
-    ],
-    "hash": [
-        "417831f033601f1738fefb2ce9158586d0143385a9dd0c4cfa985bcc16c7443b",
-        "7f0afd42bf52bcd6ccdfd1ce1a8741ea29cfb407058d7b99c78bbc221eb305ed"
-    ],
+    "url": "https://hyperos.mi.com/font-download/MiSans_TC.zip",
+    "hash": "417831f033601f1738fefb2ce9158586d0143385a9dd0c4cfa985bcc16c7443b",
     "extract_dir": "MiSans TC/可变字体",
     "installer": {
-        "script": "& \"$dir\\install-fonts.ps1\" install"
+        "script": [
+            "Copy-Item (Join-Path (Find-BucketDirectory $bucket -Root) \"scripts\\install-fonts.ps1\") $dir -ErrorAction Stop",
+            "& \"$dir\\install-fonts.ps1\" install"
+        ]
     },
     "uninstaller": {
         "script": "& \"$dir\\install-fonts.ps1\" uninstall"

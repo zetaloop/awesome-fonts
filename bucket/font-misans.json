@@ -6,17 +6,14 @@
         "identifier": "Freeware",
         "url": "https://hyperos.mi.com/font/"
     },
-    "url": [
-        "https://hyperos.mi.com/font-download/MiSans.zip",
-        "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1"
-    ],
-    "hash": [
-        "b6aa1fc827035922612df8edf36e5609bca1c5441e25cd57572204569b7b81d9",
-        "7f0afd42bf52bcd6ccdfd1ce1a8741ea29cfb407058d7b99c78bbc221eb305ed"
-    ],
+    "url": "https://hyperos.mi.com/font-download/MiSans.zip",
+    "hash": "b6aa1fc827035922612df8edf36e5609bca1c5441e25cd57572204569b7b81d9",
     "extract_dir": "MiSans/可变字体",
     "installer": {
-        "script": "& \"$dir\\install-fonts.ps1\" install"
+        "script": [
+            "Copy-Item (Join-Path (Find-BucketDirectory $bucket -Root) \"scripts\\install-fonts.ps1\") $dir -ErrorAction Stop",
+            "& \"$dir\\install-fonts.ps1\" install"
+        ]
     },
     "uninstaller": {
         "script": "& \"$dir\\install-fonts.ps1\" uninstall"

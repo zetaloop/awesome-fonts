@@ -6,20 +6,21 @@
     "depends": "main/uv",
     "url": [
         "https://github.com/lxgw/LxgwNeoZhiSong/releases/download/v1.066/LXGWNeoZhiSong.ttf",
-        "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/transform-neozhisong.py",
-        "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1"
+        "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/transform-neozhisong.py"
     ],
     "hash": [
         "95936a086ff7ad8e8b30288dec0e20e817976fa1275d8f11a85b1e6144c8d017",
-        "29b769dc1ae66357c306f67e24d3f5fbc9f485f621aa21e0843fa66c823a7461",
-        "7f0afd42bf52bcd6ccdfd1ce1a8741ea29cfb407058d7b99c78bbc221eb305ed"
+        "29b769dc1ae66357c306f67e24d3f5fbc9f485f621aa21e0843fa66c823a7461"
     ],
     "pre_install": [
         "uv run \"$dir\\transform-neozhisong.py\" \"$dir\\LXGWNeoZhiSong.ttf\"",
         "if ($LASTEXITCODE -ne 0) { throw 'NeoZhiSong font transformation failed' }"
     ],
     "installer": {
-        "script": "& \"$dir\\install-fonts.ps1\" install"
+        "script": [
+            "Copy-Item (Join-Path (Find-BucketDirectory $bucket -Root) \"scripts\\install-fonts.ps1\") $dir -ErrorAction Stop",
+            "& \"$dir\\install-fonts.ps1\" install"
+        ]
     },
     "uninstaller": {
         "script": "& \"$dir\\install-fonts.ps1\" uninstall"
@@ -28,8 +29,7 @@
     "autoupdate": {
         "url": [
             "https://github.com/lxgw/LxgwNeoZhiSong/releases/download/v$version/LXGWNeoZhiSong.ttf",
-            "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/transform-neozhisong.py",
-            "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1"
+            "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/transform-neozhisong.py"
         ]
     }
 }

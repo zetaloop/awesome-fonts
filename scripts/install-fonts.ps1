@@ -4,6 +4,7 @@ param(
     [string] $Action
 )
 
+$ErrorActionPreference = 'Stop'
 $fontInstallDir = if ($global) { "$env:windir\Fonts" } else { "$env:LOCALAPPDATA\Microsoft\Windows\Fonts" }
 $registryRoot = if ($global) { 'HKLM' } else { 'HKCU' }
 $registryKey = "${registryRoot}:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts"
@@ -51,18 +52,21 @@ if ($Action -eq 'install') {
 
     foreach ($font in $fonts) {
         $destination = Join-Path $fontInstallDir $font.Name
-        Copy-Item $font.FullName $destination -Force
+        $value = if ($global) { $font.Name } else { $destination }
+        $sameFile = (Test-Path $destination) -and (Get-FileHash $font.FullName).Hash -eq (Get-FileHash $destination).Hash
+
+        while ($nativeMethods::RemoveFontResourceEx($destination, 0, [IntPtr]::Zero)) {}
+        if (!$sameFile) { Copy-Item $font.FullName $destination -Force }
         if ($nativeMethods::AddFontResourceEx($destination, 0, [IntPtr]::Zero) -eq 0) {
             throw "Unable to load font '$destination'"
         }
-        $value = if ($global) { $font.Name } else { $destination }
         New-ItemProperty $registryKey "$($font.BaseName) (TrueType)" -Value $value -Force | Out-Null
     }
 } else {
     foreach ($font in $fonts) {
         $destination = Join-Path $fontInstallDir $font.Name
         if (Test-Path $destination) {
-            $nativeMethods::RemoveFontResourceEx($destination, 0, [IntPtr]::Zero) | Out-Null
+            while ($nativeMethods::RemoveFontResourceEx($destination, 0, [IntPtr]::Zero)) {}
             $stream = [System.IO.File]::Open($destination, 'Open', 'ReadWrite', 'None')
             $stream.Dispose()
         }
@@ -70,8 +74,11 @@ if ($Action -eq 'install') {
 
     foreach ($font in $fonts) {
         $destination = Join-Path $fontInstallDir $font.Name
-        Remove-Item $destination -Force -ErrorAction SilentlyContinue
-        Remove-ItemProperty $registryKey "$($font.BaseName) (TrueType)" -Force -ErrorAction SilentlyContinue
+        if (Test-Path $destination) { Remove-Item $destination -Force }
+        $name = "$($font.BaseName) (TrueType)"
+        if ($null -ne (Get-ItemPropertyValue $registryKey $name -ErrorAction SilentlyContinue)) {
+            Remove-ItemProperty $registryKey $name -Force
+        }
     }
 }
 

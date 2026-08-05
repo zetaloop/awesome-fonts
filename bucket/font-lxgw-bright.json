@@ -3,25 +3,19 @@
     "description": "LXGW Bright CJK sans-serif font family",
     "homepage": "https://github.com/lxgw/LxgwBright",
     "license": "OFL-1.1",
-    "url": [
-        "https://github.com/lxgw/LxgwBright/releases/download/v5.528/LXGWBright.7z",
-        "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1"
-    ],
-    "hash": [
-        "a476ba9620dce0fbba7522fe578ed5cc7ba14518363612af583fe07ea33973ea",
-        "7f0afd42bf52bcd6ccdfd1ce1a8741ea29cfb407058d7b99c78bbc221eb305ed"
-    ],
+    "url": "https://github.com/lxgw/LxgwBright/releases/download/v5.528/LXGWBright.7z",
+    "hash": "a476ba9620dce0fbba7522fe578ed5cc7ba14518363612af583fe07ea33973ea",
     "installer": {
-        "script": "& \"$dir\\install-fonts.ps1\" install"
+        "script": [
+            "Copy-Item (Join-Path (Find-BucketDirectory $bucket -Root) \"scripts\\install-fonts.ps1\") $dir -ErrorAction Stop",
+            "& \"$dir\\install-fonts.ps1\" install"
+        ]
     },
     "uninstaller": {
         "script": "& \"$dir\\install-fonts.ps1\" uninstall"
     },
     "checkver": "github",
     "autoupdate": {
-        "url": [
-            "https://github.com/lxgw/LxgwBright/releases/download/v$version/LXGWBright.7z",
-            "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1"
-        ]
+        "url": "https://github.com/lxgw/LxgwBright/releases/download/v$version/LXGWBright.7z"
     }
 }
