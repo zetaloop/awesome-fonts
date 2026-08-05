@@ -7,7 +7,7 @@
         "url": "https://www.alibabafonts.com/"
     },
     "url": "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1",
-    "hash": "ca61c8ebad92fe7fd6fb1a8a95a96ea54307a39d29bda162d5cf467077bc7878",
+    "hash": "f1085dff30da91cbb6ca7bf23691063f4c80f22890f0c2ed37567b8328703480",
     "pre_install": [
         "$archive = \"$dir\\AlibabaPuHuiTi-3.zip\"",
         "Invoke-WebRequest 'https://fonts.alibabadesign.com/AlibabaPuHuiTi-3.zip' -Headers @{ Referer = 'https://www.alibabafonts.com/' } -OutFile $archive",

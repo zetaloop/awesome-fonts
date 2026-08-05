@@ -7,7 +7,7 @@ param(
 $fontInstallDir = if ($global) { "$env:windir\Fonts" } else { "$env:LOCALAPPDATA\Microsoft\Windows\Fonts" }
 $registryRoot = if ($global) { 'HKLM' } else { 'HKCU' }
 $registryKey = "${registryRoot}:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts"
-$fonts = @(Get-ChildItem $PSScriptRoot -Recurse -File | Where-Object { $_.Extension -in '.ttf', '.ttc' })
+$fonts = @(Get-ChildItem $PSScriptRoot -Recurse -File | Where-Object { $_.Extension -in '.ttf', '.ttc' -and !$_.Name.StartsWith('._') })
 $nativeMethods = 'AwesomeFonts.NativeMethods' -as [type]
 if (!$nativeMethods) {
     $nativeMethods = Add-Type -MemberDefinition @'

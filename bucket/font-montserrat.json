@@ -15,7 +15,7 @@
         "51607f316bc020e59f03cbf51543eecffbea501c0b31d73e5b82927c5cca442c",
         "276f10d3c0a32104955bc065406b20e4797471368a221b54285dd9ef151c6b11",
         "40af9ed2aab1cc49b4397274f4bac08dd5f349285583581e94670f5c7edba6d0",
-        "ca61c8ebad92fe7fd6fb1a8a95a96ea54307a39d29bda162d5cf467077bc7878"
+        "f1085dff30da91cbb6ca7bf23691063f4c80f22890f0c2ed37567b8328703480"
     ],
     "installer": {
         "script": "& \"$dir\\install-fonts.ps1\" install"
