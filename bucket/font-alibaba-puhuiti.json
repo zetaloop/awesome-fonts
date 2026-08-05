@@ -6,6 +6,7 @@
         "identifier": "Freeware",
         "url": "https://www.alibabafonts.com/"
     },
+    "url": "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1",
     "pre_install": [
         "$archive = \"$dir\\AlibabaPuHuiTi-3.zip\"",
         "Invoke-WebRequest 'https://fonts.alibabadesign.com/AlibabaPuHuiTi-3.zip' -Headers @{ Referer = 'https://www.alibabafonts.com/' } -OutFile $archive",
