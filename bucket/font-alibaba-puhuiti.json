@@ -6,15 +6,14 @@
         "identifier": "Freeware",
         "url": "https://www.alibabafonts.com/"
     },
-    "url": [
-        "https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3.zip",
-        "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1"
+    "url": "https://raw.githubusercontent.com/zetaloop/awesome-fonts/main/scripts/install-fonts.ps1",
+    "hash": "ca61c8ebad92fe7fd6fb1a8a95a96ea54307a39d29bda162d5cf467077bc7878",
+    "pre_install": [
+        "$archive = \"$dir\\AlibabaPuHuiTi-3.zip\"",
+        "Invoke-WebRequest 'https://fonts.alibabadesign.com/AlibabaPuHuiTi-3.zip' -Headers @{ Referer = 'https://www.alibabafonts.com/' } -OutFile $archive",
+        "if ((Get-FileHash $archive).Hash -ne 'F25F730B6A7661BCD5B9764DC98F05D3AC25EE771977CF04B31ED5FBA9F496A7') { throw 'Hash check failed for AlibabaPuHuiTi-3.zip' }",
+        "Expand-7zipArchive $archive $dir -Removal"
     ],
-    "hash": [
-        "f25f730b6a7661bcd5b9764dc98f05d3ac25ee771977cf04b31ed5fba9f496a7",
-        "ca61c8ebad92fe7fd6fb1a8a95a96ea54307a39d29bda162d5cf467077bc7878"
-    ],
-    "extract_dir": "AlibabaPuHuiTi-3",
     "installer": {
         "script": "& \"$dir\\install-fonts.ps1\" install"
     },
