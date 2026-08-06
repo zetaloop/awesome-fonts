@@ -75,10 +75,7 @@ if ($Action -eq 'install') {
     foreach ($font in $fonts) {
         $destination = Join-Path $fontInstallDir $font.Name
         if (Test-Path -LiteralPath $destination) { Remove-Item -LiteralPath $destination -Force }
-        $name = [WildcardPattern]::Escape("$($font.BaseName) (TrueType)")
-        if ($null -ne (Get-ItemPropertyValue $registryKey $name -ErrorAction SilentlyContinue)) {
-            Remove-ItemProperty $registryKey $name -Force
-        }
+        Remove-ItemProperty -LiteralPath $registryKey -Name ([WildcardPattern]::Escape("$($font.BaseName) (TrueType)")) -Force
     }
 }
 
